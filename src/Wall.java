@@ -9,13 +9,11 @@ public class Wall implements Obstacles {
     }
 
     @Override
-    public int getDist() {
+    public void getDist(Participants p) {
+       p.jump(height);
+       if(p.isCheck()) {
+           System.out.println(" перепрыгнул " + height + " метров");
+       }
 
-        return height;
-    }
-
-    @Override
-    public String getType() {
-        return "Wall";
     }
 }

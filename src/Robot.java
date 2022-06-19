@@ -17,8 +17,6 @@ public class Robot implements Participants {
     public void jump(int height) {
         if (height <= 40 && check) {
             System.out.print("Робот " + this.name + " ");
-            Participants.checkJump(check);
-            System.out.println(height + " метров.");
         } else if (check) {
             check = false;
             System.out.println("Робот " + this.name + " выбыл из соревнования");
@@ -29,11 +27,12 @@ public class Robot implements Participants {
     public void run(int distance) {
         if (distance <= 40 && check) {
             System.out.print("Робот " + this.name + " ");
-            Participants.checkRun(check);
-            System.out.println(distance + " метров.");
         } else if (check) {
             check = false;
             System.out.println("Робот " + this.name + " выбыл из соревнования");
         }
+    }
+    public boolean isCheck() {
+        return check;
     }
 }

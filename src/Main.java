@@ -23,11 +23,7 @@ public class Main {
 
         for (Participants i : p) {
             for (Obstacles j : t) {
-                if (j.getType() == "Wall") {
-                    i.jump(j.getDist());
-                } else if (j.getType() == "Track") {
-                    i.run(j.getDist());
-                }
+                j.getDist(i);
             }
            i.finish();
         }

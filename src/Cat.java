@@ -7,7 +7,7 @@ public class Cat implements Participants {
 
     @Override
     public void finish() {
-        if (check)   System.out.println("Кот " + this.name + " прошел все испытания!");
+        if (check) System.out.println("Кот " + this.name + " прошел все испытания!");
     }
 
     public Cat(String name) {
@@ -18,9 +18,7 @@ public class Cat implements Participants {
     public void jump(int height) {
         if (height <= 5 && check) {
             System.out.print("Кот " + this.name + " ");
-            Participants.checkJump(check);
-            System.out.println(height + " метров.");
-        } else if (check) {
+                  } else if (check) {
             check = false;
             System.out.println("Кот " + this.name + " выбыл из соревнования");
         }
@@ -30,11 +28,13 @@ public class Cat implements Participants {
     public void run(int distance) {
         if (distance <= 20 && check) {
             System.out.print("Кот " + this.name + " ");
-            Participants.checkRun(check);
-            System.out.println(distance + " метров.");
-        } else if (check) {
+                 } else if (check) {
             check = false;
             System.out.println("Кот " + this.name + " выбыл из соревнования");
         }
+    }
+
+    public boolean isCheck() {
+        return check;
     }
 }
